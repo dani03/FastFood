@@ -73,3 +73,6 @@ img{
   padding: 50px;
   border-radius: 3px;
 }
+.erreur{
+  color:red;
+}

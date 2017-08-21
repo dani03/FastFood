@@ -1,3 +1,13 @@
+<?php
+require 'dataBase.php';
+
+
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,6 +27,10 @@
    <div class="container admin">
      <div class="row">
          <h2><strong>ajouter un produit</strong></h2><br>
+         <div class="form-actions">
+           <button type="submit"class="btn btn-success" name="button"><span class="glyphicon glyphicon-plus"></span> ajouter</button>
+           <a href="admin.php" class="btn btn-primary"><span class='glyphicon glyphicon-arrow-left'></span> retour</a>
+         </div>
          <!-- multipart/form-data ici c'est pour pouvoir upload une image -->
          <form class="form" role="form" action="create.php" method="post" enctype="multipart/form-data">
            <div class="form-group">
@@ -25,10 +39,16 @@
               <span class="erreur"><?php $nameError; ?></span>
            </div>
            <div class="form-group">
+             <label for="name">Télécharger une image:</label>
+             <input type="file"  id="image" name="image">
+             <span class="erreur"><?php echo $imageError ; ?></span>
+           </div>
+           <div class="form-group">
              <label for="name">description:</label>
              <input type="text" class="form-control"  id="description" name="description" placeholder="description" value="<?php echo $description ?>">
               <span class="erreur"><?php $descriptionError; ?></span>
            </div>
+
            <div class="form-group">
              <label for="price">prix (en €):</label>
              <!-- step ici c'est pour dire de combien sa augmente -->
@@ -36,14 +56,24 @@
               <span class="erreur"><?php $priceError; ?></span>
            </div>
            <div class="form-group">
-             <label for="name">nom:</label>
-             <input type="text" class="form-control"  id="name" name="name" placeholder="nom du produit" value="<?php echo $name ?>">
-              <span class="erreur"><?php $nameError; ?></span>
+             <label for="name">categories:</label>
+            <select class="form-control" name="category" id="category">
+              <?php
+                  $db = baseDedonnee::connexion();
+                foreach ($db->query('SELECT * FROM categories') as $row) {
+                   echo "<option value='".$row['id'].'">'.$row['name'].'</option>';
+                }
+
+              baseDedonnee::deconnexion();
+               ?>
+            </select>
+              <span class="erreur"><?php echo $categoryError; ?></span>
            </div>
+
         </form>
+        <br>
+
      </div>
-
-
    </div>
   </body>
 </html>
