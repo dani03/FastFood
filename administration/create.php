@@ -1,7 +1,91 @@
 <?php
 require 'dataBase.php';
+$nameError = $descriptionError = $priceError = $categoryError = $imageError = $name = $description = $price = $category = $image = "";
+if(!empty($_POST)){
+    $name = security($_POST['name']);
+    $description = security($_POST['description']);
+    $price = security($_POST['price']);
+    $category = security($_POST['category']);
+    $image= security($_FILES['image']['name']);
+    // ici on recupere le chemin de l'image
+    $imagePath='../images/images/'.basename($image);
+    $imageExtension = pathinfo($imagePath, PATHINFO_EXTENSION);
+    $isSuccess = true;
+    $isUploadSuccess = false;
 
 
+        if(empty($name)){
+          $nameError = 'ce champ est vide!';
+          $isSuccess = false;
+        }
+        if(empty($description)){
+          $descriptionError = 'ce champ est vide!';
+          $isSuccess = false;
+        }
+        if(empty($price)){
+          $priceError = 'ce champ est vide!';
+          $isSuccess = false;
+        }
+        if(empty($category)){
+          $categoryError = 'ce champ est vide!';
+          $isSuccess = false;
+        }
+        if(empty($image)){
+          $imageError = 'ce champ image vide!';
+          $isSuccess = false;
+        }
+        else
+         {
+             //  ici on va verifier si l'upload d'image est bon si le format convient etc;
+              $isUploadSuccess =true;
+              if($imageExtension !="jpg" && $imageExtension !="jpeg" && $imageExtension !="gif"){
+                $imageError = "les extentions d'images autorisées sont jpg jpeg et gif";
+                $isSuccess = false;
+              }
+             //  ici on verifie si l'image n'est pas la meme
+             if(file_exists($imagePath)){
+               $imageError ="cette image existe deja";
+               $isSuccess = false;
+             }
+             // ici on verifie la taille de l'image
+             if($_FILES['image']['size'] > 500000)
+             {
+               $imageError = "le fichier est trop lourd";
+               $isSuccess = false ;
+             }
+
+             if($isSuccess)
+             {
+               // ici la function move_uploaded_file va prendre notre image et va ,ous la mettre dans notre chemin "$imagePath"
+               if(!move_uploaded_file($_FILES["image"]["tmp_name"], $imagePath))
+               {
+                     $imageError = "il y'a une erreur avec le telechargement d'image";
+                     $isSuccess = false;
+               }
+             }
+
+           }
+      //  et si tout est bon alors on se connecte à la base de donnee et on envoi les informations
+       if($isSuccess == true && $isUploadSuccess == true)
+       {
+         $race = baseDedonnee::connexion();
+         $statement = $race->prepare("INSERT INTO items (name,description,price,category,image) VALUES(?,?,?,?,?)");
+         $statement->execute(array($name,$description,$price,$category,$image));
+         baseDedonee::deconnexion();
+         header("location: admin.php");
+       }
+
+}
+
+
+
+
+function security($var){
+
+   $var = trim($var);
+   $var = htmlspecialchars($var);
+   stripslashes($var);
+}
  ?>
 
 
@@ -18,7 +102,7 @@ require 'dataBase.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="../css/style.css">
-    <title>Burger king</title>
+    <title>admin</title>
   </head>
   <body>
    <div class="container Monsite">
@@ -52,7 +136,7 @@ require 'dataBase.php';
            <div class="form-group">
              <label for="price">prix (en €):</label>
              <!-- step ici c'est pour dire de combien sa augmente -->
-             <input type="number" step="0.10" class="form-control"  id="price" name="name" placeholder="prix" value="<?php echo $price ?>">
+             <input type="number" step="0.10" class="form-control"  id="price" name="price" placeholder="prix" value="<?php echo $price ?>">
               <span class="erreur"><?php $priceError; ?></span>
            </div>
            <div class="form-group">
