@@ -1,14 +1,15 @@
 <?php
 require 'dataBase.php';
 $nameError = $descriptionError = $priceError = $categoryError = $imageError = $name = $description = $price = $category = $image = "";
+
 if(!empty($_POST)){
     $name = security($_POST['name']);
     $description = security($_POST['description']);
     $price = security($_POST['price']);
     $category = security($_POST['category']);
-    $image= security($_FILES['image']['name']);
+    $image = security($_FILES['image']['name']);
     // ici on recupere le chemin de l'image
-    $imagePath='../images/images/'.basename($image);
+    $imagePath = '../images/images/'.basename($image);
     $imageExtension = pathinfo($imagePath, PATHINFO_EXTENSION);
     $isSuccess = true;
     $isUploadSuccess = false;
@@ -26,47 +27,43 @@ if(!empty($_POST)){
           $priceError = 'ce champ est vide!';
           $isSuccess = false;
         }
-        if(empty($category)){
-          $categoryError = 'ce champ est vide!';
-          $isSuccess = false;
-        }
-        if(empty($image)){
-          $imageError = 'ce champ image vide!';
-          $isSuccess = false;
-        }
-        else
-         {
+          if(empty($image)){
+            $imageError = 'ce champ image vide!';
+            $isSuccess = false;
+          }
+          else
+           {
              //  ici on va verifier si l'upload d'image est bon si le format convient etc;
               $isUploadSuccess =true;
-              if($imageExtension !="jpg" && $imageExtension !="jpeg" && $imageExtension !="gif"){
+              if($imageExtension !="jpg" && $imageExtension!="png" && $imageExtension !="jpeg" && $imageExtension !="gif"){
                 $imageError = "les extentions d'images autorisées sont jpg jpeg et gif";
-                $isSuccess = false;
+                  $isUploadSuccess = false;
               }
              //  ici on verifie si l'image n'est pas la meme
              if(file_exists($imagePath)){
                $imageError ="cette image existe deja";
-               $isSuccess = false;
+                 $isUploadSuccess = false;
              }
              // ici on verifie la taille de l'image
              if($_FILES['image']['size'] > 500000)
              {
                $imageError = "le fichier est trop lourd";
-               $isSuccess = false ;
+                 $isUploadSuccess = false ;
              }
 
-             if($isSuccess)
+             if($isUploadSuccess)
              {
                // ici la function move_uploaded_file va prendre notre image et va ,ous la mettre dans notre chemin "$imagePath"
                if(!move_uploaded_file($_FILES["image"]["tmp_name"], $imagePath))
                {
                      $imageError = "il y'a une erreur avec le telechargement d'image";
-                     $isSuccess = false;
+                       $isUploadSuccess = false;
                }
              }
 
            }
       //  et si tout est bon alors on se connecte à la base de donnee et on envoi les informations
-       if($isSuccess == true && $isUploadSuccess == true)
+       if($isSuccess && $isUploadSuccess)
        {
          $race = baseDedonnee::connexion();
          $statement = $race->prepare("INSERT INTO items (name,description,price,category,image) VALUES(?,?,?,?,?)");
@@ -89,9 +86,6 @@ function security($var){
  ?>
 
 
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -111,41 +105,34 @@ function security($var){
    <div class="container admin">
      <div class="row">
          <h2><strong>ajouter un produit</strong></h2><br>
-         <div class="form-actions">
-           <button type="submit"class="btn btn-success" name="button"><span class="glyphicon glyphicon-plus"></span> ajouter</button>
-           <a href="admin.php" class="btn btn-primary"><span class='glyphicon glyphicon-arrow-left'></span> retour</a>
-         </div>
+
          <!-- multipart/form-data ici c'est pour pouvoir upload une image -->
          <form class="form" role="form" action="create.php" method="post" enctype="multipart/form-data">
            <div class="form-group">
              <label for="name">nom:</label>
              <input type="text" class="form-control"  id="name" name="name" placeholder="nom du produit" value="<?php echo $name ?>">
-              <span class="erreur"><?php $nameError; ?></span>
+              <span class="erreur"><?php echo $nameError; ?></span>
            </div>
+
            <div class="form-group">
-             <label for="name">Télécharger une image:</label>
-             <input type="file"  id="image" name="image">
-             <span class="erreur"><?php echo $imageError ; ?></span>
-           </div>
-           <div class="form-group">
-             <label for="name">description:</label>
+             <label for="description">description:</label>
              <input type="text" class="form-control"  id="description" name="description" placeholder="description" value="<?php echo $description ?>">
-              <span class="erreur"><?php $descriptionError; ?></span>
+              <span class="erreur"><?php echo $descriptionError; ?></span>
            </div>
 
            <div class="form-group">
              <label for="price">prix (en €):</label>
              <!-- step ici c'est pour dire de combien sa augmente -->
-             <input type="number" step="0.10" class="form-control"  id="price" name="price" placeholder="prix" value="<?php echo $price ?>">
-              <span class="erreur"><?php $priceError; ?></span>
+             <input type="number" step="0.01" class="form-control"  id="price" name="price" placeholder="prix" value="<?php echo $price ?>">
+              <span class="erreur"><?php echo $priceError; ?></span>
            </div>
            <div class="form-group">
              <label for="name">categories:</label>
             <select class="form-control" name="category" id="category">
               <?php
                   $db = baseDedonnee::connexion();
-                foreach ($db->query('SELECT * FROM categories') as $row) {
-                   echo "<option value='".$row['id'].'">'.$row['name'].'</option>';
+                foreach($db->query('SELECT * FROM categories') as $row) {
+                  echo '<option value="'.$row['id']. '">' .$row['name']. '</option>';
                 }
 
               baseDedonnee::deconnexion();
@@ -153,9 +140,16 @@ function security($var){
             </select>
               <span class="erreur"><?php echo $categoryError; ?></span>
            </div>
-
+           <div class="form-group">
+             <label for="image">Télécharger une image:</label>
+             <input type="file"  id="image" name="image">
+             <span class="erreur"><?php echo $imageError ; ?></span>
+           </div>
+           <div class="form-actions">
+             <button type="submit"class="btn btn-success" name="button"><span class="glyphicon glyphicon-plus"></span> ajouter</button>
+             <a href="admin.php" class="btn btn-primary"><span class='glyphicon glyphicon-arrow-left'></span> retour</a>
+           </div>
         </form>
-        <br>
 
      </div>
    </div>
