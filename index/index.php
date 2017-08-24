@@ -29,7 +29,7 @@
            <div class="row">
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/menuSimple.png" alt="">
+                 <img src="../images/images/m1.png" alt="">
                  <div class="prix"> 9.10 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -42,7 +42,7 @@
              <!-- ******************************menu 2 ***************************** -->
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/menu2.png" alt="">
+                 <img src="../images/images/m2.png" alt="">
                  <div class="prix"> 8.70 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -55,7 +55,7 @@
 
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/menu3.png" alt="">
+                 <img src="../images/images/m3.png" alt="">
                  <div class="prix"> 9,90 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -68,7 +68,7 @@
 
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/menu4.png" alt="">
+                 <img src="../images/images/m4.png" alt="">
                  <div class="prix"> 7.10 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -81,7 +81,7 @@
 
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/menu5.png" alt="">
+                 <img src="../images/images/m5.png" alt="">
                  <div class="prix"> 7.50 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -94,7 +94,7 @@
 
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/menu6.png" alt="">
+                 <img src="../images/images/m6.png" alt="">
                  <div class="prix"> 9.30 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -111,7 +111,7 @@
            <div class="row">
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/maxiburger.png" alt="">
+                 <img src="../images/images/b1.png" alt="">
                  <div class="prix"> 9.50 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -124,7 +124,7 @@
              <!-- ******************************burger 2 ***************************** -->
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/tripleburger.png" alt="">
+                 <img src="../images/images/b2.png" alt="">
                  <div class="prix"> 8.50 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -163,7 +163,7 @@
 
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/cheeseBurger.png" alt="">
+                 <img src="../images/images/b5.png" alt="">
                  <div class="prix"> 5.00€ </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -175,8 +175,8 @@
              </div>
 
              <div class="col-sm-6 col-md-4">
-               <div class="thumbnail ">
-                 <img src="../images/images/bigMac.png" alt="">
+               <div class="thumbnail">
+                 <img src="../images/images/b6.png" alt="">
                  <div class="prix"> 9.10 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -193,7 +193,7 @@
             <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/salade1.png" alt="">
+                  <img src="../images/images/s1.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -206,7 +206,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/salade2.png" alt="">
+                  <img src="../images/images/s2.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -219,7 +219,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/salade3.png" alt="">
+                  <img src="../images/images/s3.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -232,7 +232,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/salade4.png" alt="">
+                  <img src="../images/images/s4.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -245,7 +245,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/salade5.png" alt="">
+                  <img src="../images/images/s5.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -262,7 +262,7 @@
             <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/cocacola.png" alt="">
+                  <img src="../images/images/bo1.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -275,7 +275,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/cocazero.png" alt="">
+                  <img src="../images/images/bo2.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -288,7 +288,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/fanta.png" alt="">
+                  <img src="../images/images/bo3.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -301,7 +301,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/light.png" alt="">
+                  <img src="../images/images/bo4.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -314,7 +314,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/nesta.png" alt="">
+                  <img src="../images/images/bo5.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -331,7 +331,7 @@
             <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/suplementFrite.png" alt="">
+                  <img src="../images/images/s1.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -343,8 +343,8 @@
               </div>
 
               <div class="col-sm-6 col-md-4">
-                <div class="thumbnail ">
-                  <img src="../images/images/poulet.png" alt="">
+                <div class="thumbnail">
+                  <img src="../images/images/s5.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -357,12 +357,12 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/nugets.png" alt="">
+                  <img src="../images/images/s3.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
                     <h4>nuggets</h4>
-                    <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
+                    <p>nuggets</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
                   </div>
                 </div>
@@ -370,7 +370,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/nugettes2.png" alt="">
+                  <img src="../images/images/s4.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -383,7 +383,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/donuts.png" alt="">
+                  <img src="../images/images/d3.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -396,7 +396,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/rondelle.png" alt="">
+                  <img src="../images/images/s2.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
