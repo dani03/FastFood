@@ -47,7 +47,7 @@ function security($var){
            <p class="alert alert-warning"> voulez-vous vraiment supprimer cette element ?</p>
            <div class="form-actions">
              <button type="submit"class="btn btn-warning" name="button"> oui</button>
-             <a href="admin.php" class="btn btn-info">non</a>
+             <a href="admin.php" class="btn btn-success">non</a>
            </div>
         </form>
 

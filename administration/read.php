@@ -3,17 +3,17 @@ require 'dataBase.php';
 if(!empty($_GET['id'])){
    $id = security($_GET['id']);
 }
-  $database = baseDedonnee::connexion();
-  $statement = $database->prepare('SELECT items.id, items.name, items.description, items.price, items.image, categories.name AS category FROM items INNER JOIN categories ON items.category = categories.id WHERE items.id= ?');
+  $db = baseDedonnee::connexion();
+  $statement = $db->prepare('SELECT items.id, items.name, items.description, items.price, items.image, categories.name AS category FROM items LEFT JOIN categories ON items.category = categories.id WHERE items.id= ?');
   $statement->execute(array($id));
   $item = $statement->fetch();
   baseDedonnee::deconnexion();
 
 
 function security($var){
-$var=  htmlspecialchars($var);
-$var=   trim($var);
-  $var= stripslashes($var);
+$var= htmlspecialchars($var);
+$var= trim($var);
+$var= stripslashes($var);
   return $var;
 }
  ?>
@@ -60,7 +60,7 @@ $var=   trim($var);
         </div>
         <div class="col-sm-6">
             <div class="thumbnail ">
-              <img src="<?php echo '../images/images/'. $item['image'];?>">
+              <img src="<?php echo '../images/images/' .$item['image'];?>">
               <div class="prix"><?php echo number_format((float)$item['price'],2).' €';?></div>
               <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
               <div class="caption">

@@ -7,7 +7,7 @@
     private static $bdmdp = "root";
     private static $bd = null;
 
-  // public static veut ici que la function appartient a la classe baseDedonnee
+  // public static veut ici dire que la function appartient a la classe baseDedonnee
   // et non a l'instance sinon on devait ecrire (public function...)
     public static function connexion()
       {
@@ -24,7 +24,7 @@
       self::$bd = null;
     }
   }
- 
+
 
 
 

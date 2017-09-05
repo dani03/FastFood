@@ -15,7 +15,7 @@
     <div class="container admin">
       <div class="row">
         <h3><strong>listes des items</strong>
-        <a href="create.php" class="btn btn-success "><span class="glyphicon glyphicon-plus"></span> ajouter</a></h3>
+        <a href="create.php" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> ajouter</a></h3>
        <table class="table table-striped table-bordered">
          <thead>
            <tr>
@@ -30,20 +30,20 @@
            <!-- ici on se connecte a la base de donnee -->
            <?php
               require 'dataBase.php';
-              $req = baseDedonnee::connexion();
-              $statement = $req->query('SELECT items.id, items.name, items.description, items.price, categories.name AS category FROM items INNER JOIN categories ON items.category = categories.id order by items.id DESC');
+              $db = baseDedonnee::connexion();
+              $statement = $db->query('SELECT  items.id, items.name, items.description, items.price, categories.name AS category FROM items LEFT JOIN categories ON items.category = categories.id order by items.id DESC');
             // ici la condition pour relier les deux tables est items.category = categories.id
               while($item = $statement->fetch())
               {
-              echo "<tr>";
-               echo "<td>".$item['name']."</td>";
-               echo "<td>".$item['description']."</td>";
-               echo "<td>".number_format((float)$item['price'],2).' €'."</td>";
-               echo "<td>".$item['category']."</td>";
+              echo '<tr>';
+               echo "<td>". $item['name'] ."</td>";
+               echo "<td>". $item['description'] ."</td>";
+               echo "<td>". number_format((float)$item['price'],2) .' €'."</td>";
+               echo "<td>". $item['category'] ."</td>";
                 echo  "<td width='350px'>";
-                echo  '<a href="read.php?id='.$item['id'].'" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"><span>voir</a>';
+                echo  '<a href="read.php?id='. $item['id'] . '" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"><span>voir</a>';
                 echo ' ';
-                echo  '<a href="update.php?id='.$item['id'].'"class="btn btn-primary"><span class="glyphicon glyphicon-pencil"><span>modifier</a>';
+                echo  '<a href="update.php?id='. $item['id'] . '"class="btn btn-primary"><span class="glyphicon glyphicon-pencil"><span>modifier</a>';
                 echo ' ';
                 echo  '<a href="delete.php?id='.$item['id'].'" class="btn btn-danger"><span class="glyphicon glyphicon-remove"><span>supprimer</a>';
                 echo  '</td>';

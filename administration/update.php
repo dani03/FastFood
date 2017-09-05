@@ -4,7 +4,7 @@ require 'dataBase.php';
 if(!empty($_GET['id'])){
   $id = security($_GET['id']);
 }
-$nameError = $descriptionError = $priceError = $categoryError = $imageError = $name = $description = $price = $category = $image = "";
+$nameError = $descriptionError = $priceError = $imageError = $name = $description = $price = $image = "";
 
 if(!empty($_POST)){
     $name = security($_POST['name']);
@@ -36,7 +36,7 @@ if(!empty($_POST)){
           else
            {
              $updateImage = true;
-             //  ici on va verifier si l'upload d'image est bon si le format convient etc;
+             //  ici on va verifier si l'upload d'image est bon si le format convient etc
               $isUploadSuccess =true;
               if($imageExtension !="jpg" && $imageExtension !="png" && $imageExtension !="jpeg" && $imageExtension !="gif"){
                 $imageError = "les extentions d'images autorisées sont jpg jpeg et gif";
@@ -68,14 +68,21 @@ if(!empty($_POST)){
       //  et si tout est bon alors on se connecte à la base de donnee et on envoi les informations
        if(($isSuccess && $isUploadSuccess && $updateImage) || (!$updateImage && $isSuccess))
        {
-         $race = baseDedonnee::connexion();
+         $db = baseDedonnee::connexion();
          if($updateImage){
           //  dans le cas ou l'image a bien ete update
-           $statement = $race->prepare("UPDATE items set name = ?, description = ?, price = ?, category = ?, image = ? WHERE id = ?");
-           $statement->execute(array($name,$description,$price,$category,$image,$id));
+           $statement = $db->prepare("UPDATE items set name = :nv_name, description = :nv_description, price = :nv_price, category = :nv_category, image = :nv_image WHERE id = :id");
+           $statement->execute(array(
+             'nv_name' => $name,
+             'nv_description' => $description,
+             'nv_price' => $price,
+             'nv_category' => $category,
+             'nv_image' => $image,
+             'id' => $id
+           ));
          }
          else {
-           $statement = $race->prepare("UPDATE  items set name = ?, description = ?, price = ?, category = ? WHERE id= ?");
+           $statement = $db->prepare("UPDATE  items set name = ?, description = ?, price = ?, category = ? WHERE id= ?");
            $statement->execute(array($name,$description,$price,$category,$id));
          }
 
@@ -83,9 +90,9 @@ if(!empty($_POST)){
          header("location: admin.php");
        }
        elseif ($updateImage && !$isUploadSuccess) {
-         $race = baseDedonnee::connexion();
+         $db = baseDedonnee::connexion();
         //  ici on veut recuperer les informations sur les items
-           $statement = $race->prepare("SELECT image FROM items WHERE id = ?");
+           $statement = $db->prepare("SELECT image FROM items WHERE id = ?");
            $statement->execute(array($id));
            $item = $statement->fetch();
            $image = $item['image'];
@@ -93,18 +100,16 @@ if(!empty($_POST)){
 
 }
 else{
-   $race = baseDedonnee::connexion();
+   $db = baseDedonnee::connexion();
   //  ici on veut recuperer les informations sur les items
-     $statement = $race->prepare("SELECT * FROM items WHERE id = ?");
-     $statement->execute(array($id));
+     $statement = $db->prepare("SELECT * FROM items WHERE id = ?");
+     $statement->execute(array('id' => $id));
      $item = $statement->fetch();
      $name = $item['name'];
      $description = $item['description'];
      $price = $item['price'];
      $category = $item['category'];
      $image = $item['image'];
-
-
 }
 
 
@@ -144,13 +149,13 @@ function security($var){
          <form class="form" role="form" action="<?php echo 'update.php?id='. $id ; ?>" method="post" enctype="multipart/form-data">
            <div class="form-group">
              <label for="name">nom:</label>
-             <input type="text" class="form-control"  id="name" name="name" placeholder="nom du produit" value="<?php echo $name ; ?>">
+             <input type="text" class="form-control"  id="name" name="name" placeholder="nom du produit" value="<?php echo $name  ?>">
               <span class="erreur"><?php echo $nameError; ?></span>
            </div>
 
            <div class="form-group">
              <label for="description">description:</label>
-             <input type="text" class="form-control"  id="description" name="description" placeholder="description" value="<?php echo $description ; ?>">
+             <input type="text" class="form-control"  id="description" name="description" placeholder="description" value= "<?php echo $description; ?>" >
               <span class="erreur"><?php echo $descriptionError; ?></span>
            </div>
 
@@ -194,11 +199,11 @@ function security($var){
        </div>
        <div class="col-sm-6">
            <div class="thumbnail ">
-             <img src="<?php echo '../images/images/'.$image ;?>">
-             <div class="prix"><?php echo number_format((float)$item['price'],2).' €';?></div>
+             <img src="<?php echo '../images/images/'. $image ;?>">
+             <div class="prix"><?php echo number_format((float)$price,2).' €';?></div>
              <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
              <div class="caption">
-               <h4><?php echo ' '.$name;?></h4>
+               <h4><?php echo $name;?></h4>
                <p></label><?php echo $description;?></p>
                <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
              </div>

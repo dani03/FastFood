@@ -111,7 +111,7 @@
            <div class="row">
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/b1.png" alt="">
+                 <img src="../images/images/b3.png" alt="">
                  <div class="prix"> 9.50 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -163,7 +163,7 @@
 
              <div class="col-sm-6 col-md-4">
                <div class="thumbnail ">
-                 <img src="../images/images/b5.png" alt="">
+                 <img src="../images/images/b6.png" alt="">
                  <div class="prix"> 5.00€ </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -175,8 +175,8 @@
              </div>
 
              <div class="col-sm-6 col-md-4">
-               <div class="thumbnail">
-                 <img src="../images/images/b6.png" alt="">
+               <div class="thumbnail ">
+                 <img src="../images/images/b1.png" alt="">
                  <div class="prix"> 9.10 € </div>
                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                  <div class="caption">
@@ -266,20 +266,7 @@
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
-                    <h4>cocacola</h4>
-                    <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
-                    <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail ">
-                  <img src="../images/images/bo2.png" alt="">
-                  <div class="prix"> 9.10 € </div>
-                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
-                  <div class="caption">
-                    <h4>coca zero</h4>
+                    <h4>cocacola/h4>
                     <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
                   </div>
@@ -292,6 +279,19 @@
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
+                    <h4>coca zero</h4>
+                    <p></p>
+                    <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail ">
+                  <img src="../images/images/bo4.png" alt="">
+                  <div class="prix"> 9.10 € </div>
+                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
+                  <div class="caption">
                     <h4>fanta</h4>
                     <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
@@ -301,7 +301,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/bo4.png" alt="">
+                  <img src="../images/images/bo2.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -314,7 +314,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/bo5.png" alt="">
+                  <img src="../images/images/bo6.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -331,6 +331,19 @@
             <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
+                  <img src="../images/images/d1.png" alt="">
+                  <div class="prix"> 9.10 € </div>
+                  <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
+                  <div class="caption">
+                    <h4>fondant au chocolat</h4>
+                    <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
+                    <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail ">
                   <img src="../images/images/s1.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
@@ -343,7 +356,7 @@
               </div>
 
               <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail ">
                   <img src="../images/images/s5.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
@@ -362,7 +375,7 @@
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
                     <h4>nuggets</h4>
-                    <p>nuggets</p>
+                    <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
                   </div>
                 </div>
@@ -413,7 +426,7 @@
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
-                    <h4>bronies</h4>
+                    <h4>fondant au cholat</h4>
                     <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
                   </div>
@@ -426,7 +439,7 @@
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
-                    <h4> milkshake</h4>
+                    <h4> menu normal</h4>
                     <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
                   </div>
@@ -439,7 +452,7 @@
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
-                    <h4>sunday 2</h4>
+                    <h4> menu normal</h4>
                     <p> sandwich : burger, salade, tomate, oignon + frites + boisson</p>
                     <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
                   </div>
