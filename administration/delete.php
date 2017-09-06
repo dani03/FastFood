@@ -39,11 +39,11 @@ function security($var){
    </div>
    <div class="container admin">
      <div class="row">
-         <h2><strong>ajouter un produit</strong></h2><br>
+         <h2><strong>supprimer ce produit</strong></h2><br>
 
          <!-- multipart/form-data ici c'est pour pouvoir upload une image -->
          <form class="form" role="form" action="delete.php" method="post">
-           <input type="hidden" name="id" value="<?php echo $id ; ?>">
+           <input type="hidden" name="id" value="<?php echo $id ; ?>"/>
            <p class="alert alert-warning"> voulez-vous vraiment supprimer cette element ?</p>
            <div class="form-actions">
              <button type="submit"class="btn btn-warning" name="button"> oui</button>
