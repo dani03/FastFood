@@ -193,7 +193,7 @@
             <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/s1.png" alt="">
+                  <img src="../images/images/sa1.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -206,7 +206,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/s2.png" alt="">
+                  <img src="../images/images/sa2.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -219,7 +219,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/s3.png" alt="">
+                  <img src="../images/images/sa3.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -232,7 +232,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/s4.png" alt="">
+                  <img src="../images/images/sa4.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">
@@ -245,7 +245,7 @@
 
               <div class="col-sm-6 col-md-4">
                 <div class="thumbnail ">
-                  <img src="../images/images/s5.png" alt="">
+                  <img src="../images/images/sa5.png" alt="">
                   <div class="prix"> 9.10 € </div>
                   <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
                   <div class="caption">

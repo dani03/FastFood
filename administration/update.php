@@ -199,11 +199,11 @@ function security($var){
        </div>
        <div class="col-sm-6">
            <div class="thumbnail ">
-             <img src="<?php echo '../images/images/'. $image ;?>">
-             <div class="prix"><?php echo number_format((float)$price,2).' €';?></div>
+             <img src="<?php echo '../images/images/' . $image ;?>" alt="">
+             <div class="prix"><?php echo number_format((float)$item['price'],2).' €';?></div>
              <!-- caption ici c'est pour mettre tous les elements en dessous de l'images -->
              <div class="caption">
-               <h4><?php echo $name;?></h4>
+               <h4><?php echo ' '.$name;?></h4>
                <p></label><?php echo $description;?></p>
                <a href="#" class="btn btn-info" role='button'><span class="glyphicon glyphicon-shopping-cart"> ajouter à la commande</span></a>
              </div>
